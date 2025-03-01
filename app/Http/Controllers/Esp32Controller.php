@@ -18,6 +18,7 @@
 //        $systolicBP = $request->systolicBP;
 //        $diastolicBP = $request->diastolicBP;
             $temperature = $request->temperature;
+            info($temperature);
 
             $url      = 'https://api.airqo.net/api/v2/devices/measurements/sites/60d058c8048305120d2d614f/recent?token=E494DSTDT3S4MY93';
             $response = Http::get($url);
