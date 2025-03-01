@@ -71,7 +71,8 @@
             ];
 
             $post_url = 'https://firestore.googleapis.com/v1/projects/at-hackthon/databases/(default)/documents/records';
-            Http::withHeaders($headers)->post($post_url , $post_data);
+           $data = Http::withHeaders($headers)->post($post_url , $post_data);
+           info($data);
 
 //             $africasTalking->voice();
 //            $text = "Africa's Talking Hackathon event taking place at Acacia place on 22/07/2023 call 0756345678 to register. Thank you";
