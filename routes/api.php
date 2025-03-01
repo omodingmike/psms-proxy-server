@@ -32,6 +32,7 @@ Route::post('/firestore', [QualityOfLifeController::class, 'firestore']);
 Route::post('/toggle-fan', [QualityOfLifeController::class, 'toggleFan']);
 Route::post('/toggle-alarm', [QualityOfLifeController::class, 'toggleAlarm']);
 Route::get('/actual-data', [AirQuoController::class, 'actual']);
+Route::get('/key', [AirQuoController::class, 'key']);
 
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/delete-patient', [PatientController::class, 'destroy']);

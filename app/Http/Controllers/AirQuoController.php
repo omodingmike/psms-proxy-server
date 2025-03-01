@@ -3,6 +3,7 @@
     namespace App\Http\Controllers;
 
     use App\Models\Health;
+    use Illuminate\Support\Facades\Artisan;
     use Illuminate\Support\Facades\Http;
 
     class AirQuoController extends Controller
@@ -18,6 +19,11 @@
         {
             return Health::latest()->take(1)->first();
 //            return Health::all();
+        }
+
+        public function key()
+        {
+            Artisan::call('key:generate');
         }
 
         public function data()
