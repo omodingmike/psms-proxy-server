@@ -1,0 +1,44 @@
+ docker buildx build --platform linux/amd64 -t omoding/healthmd .
+ 1. Adding a docker file with the contents below.
+ # Use the official PHP image as the base image
+ FROM php:8.1-rc-zts-alpine3.16
+
+ # specifies a working directory for our source code
+ WORKDIR /app
+
+ # copies your source code files along with the package file
+ COPY . /app
+
+ # install composer in your container
+ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+ # install PHP PDO mySQL extension
+ RUN docker-php-ext-install pdo_mysql
+
+ # install dependencies
+ RUN composer install
+
+ # specifies a port number for our image to run in a docker container
+ EXPOSE 8181
+
+ # command to run our docker image in container
+ CMD php artisan serve --host=0.0.0.0 --port=8181
+
+ 2.docker buildx build --platform linux/amd64 -t omoding/healthmd .
+ 3. docker run -p 8082:8181 <yourDockerhubUsername>/projectName
+ 4. http://localhost:8082/
+ 5. docker login
+ 6.docker push omoding/healthmd
+
+After making changes.
+1.docker buildx build --platform linux/amd64 -t omoding/healthmd .
+2. docker run -p 8082:8181 omoding/healthmd
+3. docker push omoding/healthmd
+
+Airquo
+@De4ult@2025 airquo
+
+token = E494DSTDT3S4MY93
+
+site id: 60d058c8048305120d2d614f
+https://api.airqo.net/api/v2/devices/measurements/sites/60d058c8048305120d2d614f/recent?token=E494DSTDT3S4MY93
