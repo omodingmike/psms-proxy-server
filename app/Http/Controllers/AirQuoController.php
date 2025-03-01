@@ -17,8 +17,8 @@
 
         public function actual()
         {
-//            return Health::latest()->take(1)->first();
-            return Health::all();
+            return Health::latest()->take(1)->first();
+//            return Health::all();
         }
 
         public function key()
